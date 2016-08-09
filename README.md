@@ -1,15 +1,10 @@
 
 This project provides a test harness for experimenting with Reverse Proxies and Multi-tenanting.
 
-For an overvire see https://github.com/tooltwist/documentation/wiki/Multi-tenanting-with-a-Reverse-Proxy.
+(For an overview see https://github.com/tooltwist/documentation/wiki/Multi-tenanting-with-a-Reverse-Proxy)
+th static and dynamic responses.  
 
-
-# Configuration
-- Apache as a reverse proxy, running inside a Docker container.
-- Three back end NodeJS Express servers, supporting ToolTwist-like URLs, with static and dynamic responses.
-
-
-Once fired up, this project uses Apache to route requests to the backend servers, and remap the URLs in the responses:
+Once fired up, this project uses Apache to route requests to three backend servers, and remap the URLs in the responses:
 
     http://dockerIP:8080/au/* -> http://server:9001/ttsvr/*  
     http://dockerIP:8080/nz/* -> http://server:9002/ttsvr/*
@@ -18,8 +13,12 @@ Once fired up, this project uses Apache to route requests to the backend servers
 
 The three different URLs go to different web servers, that are actually the same applicatiion, that use `/ttsvr/` as the webapp name. The files returned (HTML, Javascript, CSS, etc) may also have `/ttsvr/` in their URLS, and these should be remapped as required.
 
+Architecture:
 
-# Setting Up
+- Apache as a reverse proxy, running inside a Docker container.  
+- Three back end NodeJS Express servers, supporting ToolTwist-like URLs, wi
+
+### Getting Started
 Pre-requistes: Docker NodeJS  
 
 First, get the Docker image downloading (After the first time, this will start very fast):
@@ -67,16 +66,16 @@ You can now run the test page (substitute in the IP address of Docker if require
     $ open http://192.168.99.100:8080/
 
 
-## The test page
+### The test page
 On the first screen, choose a country. (BTW, This page was served up from within Apache, as a PHP page.)
 
-![2016-08-09_23-02-03](https://cloud.githubusercontent.com/assets/848697/17521368/a29ae58e-5e85-11e6-8827-b48d261426cb.png)
+![2016-08-09_23-02-03](https://cloud.githubusercontent.com/assets/848697/17521508/33554812-5e86-11e6-858e-ebef05b6a48f.png)
 
 On the country page, everything  below the heading should have /ttsvr/ replaced with the country code, and there should be two images as shown here.
 
-![2016-08-09_23-04-05](https://cloud.githubusercontent.com/assets/848697/17521371/a590cb28-5e85-11e6-9809-883c5159be3d.png)
+![2016-08-09_23-04-05](https://cloud.githubusercontent.com/assets/848697/17521510/35feb10c-5e86-11e6-8b21-e43c5e969844.png)
 
 If you click on links to view the stylesheet or Javascript, you should similarly see that /ttsvr/ has been replaced.
 
-## References
+### References
 https://medium.com/dev-tricks/apache-and-php-on-docker-44faef716150#.1eq3hw8vd
