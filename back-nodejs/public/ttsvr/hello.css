@@ -1,0 +1,25 @@
+
+body {
+	font-family: arial;
+	color: blue;
+}
+
+h1 {
+	color: green;
+}
+
+.result {
+	padding-left: 40px;
+	padding: 20px;
+	color: #c00;
+}
+
+a {
+	color: #c00 !important;
+}
+
+.myimage {
+	background-image: url("/ttsvr/pass.png");
+	width: 62px;
+	height: 37px;
+}

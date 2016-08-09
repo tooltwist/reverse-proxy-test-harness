@@ -1,0 +1,13 @@
+{
+  "title": "Simulate tooltwist backend server",
+  "author": "Philip Callender",
+  "version": "2.1.0",
+  "license": "MIT",
+  "devDependencies": {
+	"express": "*",
+	"body-parser": "*",
+	"cookie-parser": "*",
+	"serve-static": "*",
+	"multer": "*"
+  }
+}
