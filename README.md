@@ -66,6 +66,13 @@ You can now run the test page (substitute in the IP address of Docker if require
     $ open http://192.168.99.100:8080/
 
 
+### Experiments
+
+Possible experiements:
+
+1. Change the Apache config to route to real ToolTwist servers.  
+2. Use NGinx instead of Apache.  
+
 ### The test page
 On the first screen, choose a country. (BTW, This page was served up from within Apache, as a PHP page.)
 
